@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { Divider, Card } from "antd";
 
 export function Update() {
   const { id } = useParams();
@@ -32,32 +33,53 @@ export function Update() {
     } catch (err) {
       console.log(err);
     }
+    navigate("/read");
   }
 
   async function deleteGuest() {
     await axios.delete(`https://ironrest.herokuapp.com/party-angelo/${id}`);
-    navigate("/");
+    navigate("/read");
   }
 
   return (
-    <div>
-      <form>
-        <p>{guest.person}</p>
-        <label>Costume</label>
-        <input
-          name="costume"
-          value={guest.costume}
-          placeholder="costume"
-          onChange={handleChange}
-        />
-        <button onClick={handleUpdate}>Edit Costume</button>
-      </form>
+    <div
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
+      <Card
+        style={{
+          width: 200,
+          margin: 10,
+          borderRadius: 50,
+          justifyContent: "center",
+        }}
+      >
+        <form>
+          <h2>{guest.person}</h2>
+          <label>Fantasia</label>
+          <input
+            name="costume"
+            value={guest.costume}
+            placeholder="costume"
+            onChange={handleChange}
+          />
+          <button
+            style={{ color: "blue", borderRadius: 20 }}
+            onClick={handleUpdate}
+          >
+            Troca a roupa
+          </button>
+        </form>
+      </Card>
 
-      <button onClick={deleteGuest}>Not Going</button>
+      <Divider></Divider>
+      <button style={{ color: "blue", borderRadius: 20 }} onClick={deleteGuest}>
+        Não vou colar. (Sou bunda mole)
+      </button>
+      <Link to="/read">
+        <button style={{ color: "blue", borderRadius: 20 }}>
+          Olha quem vai também
+        </button>
+      </Link>
     </div>
   );
 }
-
-/* {edition.map((currentEdition) =>{
-    return(<><p>{currentEdition.costume}</p></>)
-})} */

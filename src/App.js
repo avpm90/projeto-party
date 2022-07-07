@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { Create } from "./Pages/Create";
 import { Read } from "./Pages/Read";
 import { Update } from "./Pages/Update";
+import { Col, Row } from "antd";
 
 function App() {
   return (

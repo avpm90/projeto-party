@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Card } from "antd";
+import { Card, Col, Divider } from "antd";
 
 export function Read() {
   const [list, setList] = useState([]);
@@ -23,21 +23,47 @@ export function Read() {
   }, []);
 
   return (
-    <>
-      <h1>List</h1>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        alignItems: "flex-start",
+        alignContent: "stretch",
+        justifyContent: "space-around",
+        paddingLeft: 80,
+        paddingRight: 80,
+      }}
+    >
+      <h1 style={{ color: "yellow", fontSize: "500%" }}>Confirmados</h1>
+      <Divider></Divider>
       {list.map((currentList) => {
         return (
-          <>
-            <Card key={currentList.person}>
-              <p key={currentList.name}>{currentList.person}</p>
-              <p>{currentList.costume}</p>
-              <Link to={`/update/${currentList._id}`}>
-                <button>Edit</button>
-              </Link>
-            </Card>
-          </>
+          <Card
+            style={{
+              width: "10%",
+              margin: 20,
+              borderRadius: 50,
+              display: "flex",
+            }}
+            key={currentList.person}
+          >
+            <h2 key={currentList.name}>{currentList.person}</h2>
+            <h4>{currentList.costume}</h4>
+            <Link to={`/update/${currentList._id}`}>
+              <button style={{ borderRadius: 20 }}>
+                <h3 style={{ color: "blue" }}>Troca a fantasia</h3>
+              </button>
+            </Link>
+          </Card>
         );
       })}
-    </>
+      <Divider></Divider>
+      <Link to="/">
+        <button style={{ borderRadius: 20 }}>
+          <h3 style={{ color: "blue" }}> Convidar</h3>
+        </button>
+      </Link>
+    </div>
   );
 }
