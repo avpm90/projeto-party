@@ -22,8 +22,17 @@ export function Create() {
   return (
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    > 
+    >
       <h1 style={{ color: "yellow", fontSize: "500%" }}>Confirmar Presença</h1>
+
+      <p style={{ color: "lightblue", fontSize: "200%" }}>
+        "A long time ago, in a galaxy far, far away..."
+      </p>
+      <p style={{ color: "yellow", fontSize: "200%", width: 500 }}>
+        Vai rolar o episódio XXXII, confirma sua presença e já coloca a fantasia
+        que você vai usar pro jogo ficar redondo.
+      </p>
+
       <Divider></Divider>
       <Card
         style={{
