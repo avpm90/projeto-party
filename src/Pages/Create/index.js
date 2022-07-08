@@ -24,7 +24,7 @@ export function Create() {
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
-      <h1 style={{ color: "yellow", fontSize: "500%" }}>Confirmar Presença</h1>
+      <h1 className={style.perspective}>Confirmar Presença</h1>
 
       <p className={style.bluefont}>
         "A long time ago, in a galaxy far, far away..."
