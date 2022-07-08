@@ -8,7 +8,7 @@ A "page" to create a guest list for a party.
 
 # Visit:
 
-> Visit [here]().
+> Visit [here](https://github.com/avpm90/projeto-party).
 
 # More Info:
 
