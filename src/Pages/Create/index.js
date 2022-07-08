@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { Card, Divider } from "antd";
+import style from "./style.module.css";
 
 export function Create() {
   const [person, setPerson] = useState("");
@@ -25,19 +26,21 @@ export function Create() {
     >
       <h1 style={{ color: "yellow", fontSize: "500%" }}>Confirmar Presença</h1>
 
-      <p style={{ color: "lightblue", fontSize: "200%" }}>
+      <p className={style.bluefont}>
         "A long time ago, in a galaxy far, far away..."
       </p>
-      <p style={{ color: "yellow", fontSize: "200%", width: 500 }}>
+      <p className={style.perspective}>
         Vai rolar o episódio XXXII, confirma sua presença e já coloca a fantasia
         que você vai usar pro jogo ficar redondo.
       </p>
 
       <Divider></Divider>
       <Card
+        className={style.card}
         style={{
           width: 200,
-          margin: 10,
+          padding: 0,
+          margin: 20,
           borderRadius: 50,
           justifyContent: "center",
         }}
@@ -63,15 +66,24 @@ export function Create() {
               setCostume(e.target.value);
             }}
           />
-          <button style={{ color: "blue", paddinTop: 10 }} onClick={handleList}>
-            {" "}
+          <button
+            style={{
+              color: "blue",
+              borderRadius: 50,
+            }}
+            onClick={handleList}
+          >
             Tá na Lista !!!
           </button>
         </form>
       </Card>
       <Divider></Divider>
       <Link to="/read">
-        <button style={{ color: "blue" }}>Olha quem vai também</button>
+        <button
+          style={{ backgroundColor: "#24b9dd", color: "blue", borderRadiu: 50 }}
+        >
+          Olha quem vai também
+        </button>
       </Link>
     </div>
   );

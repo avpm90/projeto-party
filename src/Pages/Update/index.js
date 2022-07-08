@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { Divider, Card } from "antd";
+import style from "./style.module.css";
 
 export function Update() {
   const { id } = useParams();
@@ -45,14 +46,7 @@ export function Update() {
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
-      <Card
-        style={{
-          width: 200,
-          margin: 10,
-          borderRadius: 50,
-          justifyContent: "center",
-        }}
-      >
+      <Card className={style.card}>
         <form>
           <h2>{guest.person}</h2>
           <label>Fantasia</label>
@@ -72,11 +66,20 @@ export function Update() {
       </Card>
 
       <Divider></Divider>
-      <button style={{ color: "blue", borderRadius: 20 }} onClick={deleteGuest}>
+      <button
+        style={{ backgroundColor: "#24b9dd", color: "blue", borderRadius: 50 }}
+        onClick={deleteGuest}
+      >
         Não vou colar. (Sou bunda mole)
       </button>
       <Link to="/read">
-        <button style={{ color: "blue", borderRadius: 20 }}>
+        <button
+          style={{
+            backgroundColor: "#24b9dd",
+            color: "blue",
+            borderRadius: 50,
+          }}
+        >
           Olha quem vai também
         </button>
       </Link>

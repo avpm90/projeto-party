@@ -1,0 +1,18 @@
+.perspective {
+  color: #fed34f !important;
+  transform: perspective(300px) rotateX(25deg);
+  text-align: justify;
+  font-size: 200%;
+}
+
+.bluefont {
+  color: #24b9dd;
+  font-family: Arial;
+  font-size: 200%;
+}
+
+.card {
+  border-radius: 43px;
+  background: #24b9dd;
+  box-shadow: 23px 23px 46px #689895, -23px -23px 46px #d2ffff;
+}

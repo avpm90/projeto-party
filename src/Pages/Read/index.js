@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Card, Col, Divider } from "antd";
+import { Card, Divider } from "antd";
+import style from "./style.module.css";
 
 export function Read() {
   const [list, setList] = useState([]);
@@ -35,11 +36,14 @@ export function Read() {
         paddingRight: 80,
       }}
     >
-      <h1 style={{ color: "yellow", fontSize: "500%" }}>Confirmados</h1>
+      <h1 className={style.perspective}>Confirmados</h1>
+      <Divider></Divider>
+      <p className={style.perspective}>{list.length}</p>
       <Divider></Divider>
       {list.map((currentList) => {
         return (
           <Card
+            className={style.card}
             style={{
               width: "10%",
               margin: 20,
@@ -58,6 +62,7 @@ export function Read() {
           </Card>
         );
       })}
+
       <Divider></Divider>
       <Link to="/">
         <button style={{ borderRadius: 20 }}>
